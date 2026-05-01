@@ -1,119 +1,49 @@
-Machine Learning Research Repository
+Support Vector Machine (SVM)
 Overview
 
-This repository contains implementations of core machine learning algorithms with a focus on:
+Support Vector Machine (SVM) is a supervised machine learning algorithm used for both classification and regression tasks. It is widely applied in domains such as pattern recognition, image classification, and bioinformatics.
 
-Anomaly Detection
-Prediction Models
-Mid-level ML Concepts and Algorithms
+SVM works by identifying the optimal hyperplane that separates data points from different classes with the maximum margin.
 
-It is designed as a practical exploration of applied machine learning, covering both statistical and model-based approaches used in real-world systems such as fraud detection, system monitoring, and recommendation engines.
+What is SVM?
 
-Core Topics Covered
-Anomaly Detection
-Gaussian-based anomaly detection
-Probability density estimation
-Threshold selection using cross-validation
-Detection of outliers in structured datasets
-Supervised Learning
-Support Vector Machines (SVM)
-Linear and non-linear classification
-Kernel methods
-Margin optimization
-Statistical Modeling
-Gaussian Models
-Mean and variance estimation
-Multivariate Gaussian distribution
-Density-based anomaly detection
-Recommender Systems
-Collaborative filtering
-User-item interaction modeling
-Rating prediction
-Prediction Systems . 
+SVM is a model that divides data into classes by constructing a decision boundary known as a hyperplane. The optimal hyperplane is the one that maximizes the distance between the nearest data points of different classes.
 
-Machine-Learning-Research-Repo/
-│
-├── Anomaly Detection/
-├── SVM/
-├── Gaussian Models/
-├── Recommender Systems/
-├── Prediction Models/
-│
-├── assets/                # Visuals, plots, demos
-├── README.md
-├── LICENSE
-└── .gitignore
-Regression-based prediction
-Feature-based modeling
-Generalized prediction pipelines 
+These nearest data points are called support vectors, and they play a critical role in defining the decision boundary.
 
-
-Anomaly Detection
-
-Identifies low-probability data points
-Useful for system monitoring and fraud detection
-Gaussian Distribution Fit
-
-Models feature distributions
-Used for probabilistic anomaly detection
-Recommender System Output
-
-Predicts user preferences
-Generates personalized recommendations
-Methodologies
-Gaussian Anomaly Detection
-Estimate:
-Mean (μ)
-Variance (σ²)
-
-Compute probability:
-
-p(x) = Gaussian(x; μ, σ²)
-
-Decision rule: 
-if p(x) < ε → anomaly
-else → normal 
-
-Collaborative Filtering
-
-Prediction: 
-ŷ(i, j) = Θ(j)^T × X(i) 
-
-Learns:
-User preferences (Θ)
-Item features (X)
-Support Vector Machines
-Maximizes margin between classes
-Uses kernel trick for non-linear separation
-Key Features
-Modular implementation of ML algorithms
-Vectorized computations for performance
-Gradient-based optimization
-Cross-validation for model tuning
-Real-world applicable use cases
-Getting Started
-Prerequisites
-Octave or MATLAB
-Basic understanding of machine learning concepts 
-
-cd Anomaly\ Detection/
-ex8 
-
-ex8_cofi 
-
-Implementation Highlights
-Efficient matrix-based operations
-Sparse data handling
-Clean separation of algorithms
-Reusable components for experimentation
-Learning Outcomes
-Understanding anomaly detection techniques
-Implementing SVM from core principles
-Applying Gaussian distributions in ML
-Building recommender systems from scratch
-Designing prediction pipelines
+How It Works
+Represent the dataset in an n-dimensional space
+Identify a hyperplane that separates the classes
+Maximize the margin between the closest points (support vectors)
+Apply kernel functions if the data is not linearly separable
+Key Concepts
+Hyperplane: A decision boundary that separates classes
+Support Vectors: Data points closest to the hyperplane
+Margin: Distance between support vectors and the hyperplane
+Kernel Trick: Technique to transform data into higher dimensions for better separation
+Types of Kernels
+Linear Kernel
+Polynomial Kernel
+Radial Basis Function (RBF) Kernel
+Sigmoid Kernel
+Why SVM is Important
+Effective in high-dimensional spaces
+Performs well when the number of features exceeds the number of samples
+Uses a subset of training data (support vectors), making it memory efficient
+Provides strong performance in classification tasks with clear margins
+Flexible through the use of different kernel functions
 Applications
-Fraud detection
-Server monitoring
-Recommendation systems
-Predictive analytics 
+Image classification
+Text classification (such as spam detection)
+Face recognition
+Bioinformatics (gene classification)
+Handwriting recognition
+Advantages
+High accuracy in many scenarios
+Effective in high-dimensional spaces
+Works well with clear margin separation
+Versatile with multiple kernel functions
+Disadvantages
+Not suitable for very large datasets due to high training time
+Performance depends heavily on the choice of kernel and parameters
+Less effective when the dataset contains significant noise
